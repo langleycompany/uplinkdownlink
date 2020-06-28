@@ -33,7 +33,7 @@ function SignedInPage(props) {
               width="10rem"
               height="5rem"
               onClick={props.signOut}
-              color="#424242"
+              color="#e0e0e0"
             >
               Logout
             </NeuButton>
@@ -68,7 +68,7 @@ function LoginPage() {
               width="10rem"
               height="5rem"
               onClick={() => doOpenAuth(true)}
-              color="#424242"
+              color="#e0e0e0"
             >
               Login
             </NeuButton>
