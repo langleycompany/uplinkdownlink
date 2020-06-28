@@ -7,7 +7,7 @@ import { AppConfig } from "blockstack";
 
 import { NeuButton } from "neumorphism-react";
 
-import { UserSession } from "blockstack";
+/* import { UserSession } from "blockstack"; */
 
 import {
   Container,
@@ -18,18 +18,19 @@ import {
   Footer
 } from "react-holy-grail-layout";
 
-var userSession = new UserSession();
+/* var userSession = new UserSession();
 let options = {
   encrypt: false
 };
+*/
 
 const appConfig = new AppConfig(["store_write", "publish_data"]);
 ReactBlockstack({ appConfig });
 
 function SignedInPage(props) {
-  function saveFile() {
+  /* function saveFile() {
     console.log(this.value);
-  }
+  } */
   return (
     <Container>
       <Header p={2}>
