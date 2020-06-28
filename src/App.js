@@ -58,7 +58,7 @@ function SignedInPage(props) {
             width="6rem"
             height="3rem"
             color="#e0e0e0"
-            onclick={alert("Coming soon!")}
+            onclick={()=>{alert("Coming soon!");}}
           >
             Submit
           </NeuButton>
