@@ -58,13 +58,6 @@ function SignedInPage(props) {
           <br />
           <br />
           <br />
-          <input type="text" id="filename" value={this.value} />
-          <br />
-          <br />
-          Filename
-          <br />
-          <br />
-          <br />
           <textarea
             className="codePoint"
             style={{ resize: "none", width: "25rem", height: "20rem" }}
