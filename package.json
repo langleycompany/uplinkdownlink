@@ -1,0 +1,37 @@
+{
+  "name": "uplinkdownlink",
+  "version": "0.1.0",
+  "description": "a decentralized all-in-one app",
+  "keywords": [
+    "react",
+    "starter"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@blockstack/connect": "2.7.7",
+    "@emotion/core": "10.0.28",
+    "@emotion/styled": "10.0.27",
+    "blockstack": "21.1.0",
+    "neumorphism-react": "1.1.1",
+    "react": "16.12.0",
+    "react-blockstack": "0.6.10",
+    "react-dom": "16.12.0",
+    "react-holy-grail-layout": "0.1.5",
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
