@@ -25,7 +25,7 @@ function SignedInPage(props) {
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <span className="title">UPLINKdownlink</span>
+            <span className="title">UPLINKdownlink (test)</span>
           </div>
           <div className="right-side">
             <NeuButton
@@ -79,7 +79,7 @@ function LoginPage() {
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <span className="title">UPLINKdownlink</span>
+            <span className="title">UPLINKdownlink (test)</span>
           </div>
           <div className="right-side">
             <NeuButton
