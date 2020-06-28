@@ -43,6 +43,25 @@ function SignedInPage(props) {
       <Body>
         <Content p={2} className="page-content-loggedin">
           Welcome to the first version :)
+          <br />
+          <br />
+          <br />
+          <br />
+          <textarea
+            className="codePoint"
+            style={{ resize: "none", width: "25rem", height: "20rem" }}
+          />
+          <br />
+          <br />
+          <NeuButton
+            id="loginButton"
+            width="6rem"
+            height="3rem"
+            color="#e0e0e0"
+            onclick={alert("Coming soon!")}
+          >
+            Submit
+          </NeuButton>
         </Content>
         <Aside left primary p={2} />
         <Aside right p={2} />
