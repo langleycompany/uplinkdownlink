@@ -7,7 +7,7 @@ import { AppConfig } from "blockstack";
 
 import { NeuButton } from "neumorphism-react";
 
-/* import { UserSession } from "blockstack"; */
+import { UserSession } from "blockstack";
 
 import {
   Container,
@@ -18,11 +18,11 @@ import {
   Footer
 } from "react-holy-grail-layout";
 
-/* var userSession = new UserSession();
+var userSession = new UserSession();
 let options = {
-  encrypt: false
+  encrypt: false,
+  decrypt: false
 };
-*/
 
 const appConfig = new AppConfig(["store_write", "publish_data"]);
 ReactBlockstack({ appConfig });
@@ -33,7 +33,9 @@ function SignedInPage(props) {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log({ filename, codeInput });
+    userSession.putFile(filename, codeInput, options).then(() => {
+      console.log(filename, codeInput);
+    });
   };
 
   return (
@@ -100,6 +102,25 @@ function SignedInPage(props) {
               Submit
             </NeuButton>
           </form>
+          <br />
+          <br />
+          <NeuButton
+            onClick={() => {
+              userSession.getFile(filename, options).then(fileContents => {
+                var codeGoesHere = document.getElementById("codeGoesHere");
+                codeGoesHere.innerHTML= fileContents
+              });
+            }}
+            id="loginButton"
+            width="8rem"
+            height="4rem"
+            color="#e0e0e0"
+          >
+            Read file content
+          </NeuButton>
+          <br />
+          <br />
+          <div id="codeGoesHere" />
         </Content>
         <Aside left primary p={2} />
         <Aside right p={2} />
