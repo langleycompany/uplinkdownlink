@@ -63,6 +63,12 @@ function SignedInPage(props) {
           Welcome to the first version :)
           <br />
           <br />
+          {userSession.loadUserData().username}
+          <br />
+          <br />
+          {userSession.loadUserData().identityAddress}
+          <br />
+          <br />
           <br />
           <br />
           <form onSubmit={handleSubmit}>
@@ -104,11 +110,14 @@ function SignedInPage(props) {
           </form>
           <br />
           <br />
+          Insert the filename at the top of the page... Working to fix this! :)
+          <br />
+          <br />
           <NeuButton
             onClick={() => {
               userSession.getFile(filename, options).then(fileContents => {
                 var codeGoesHere = document.getElementById("codeGoesHere");
-                codeGoesHere.innerHTML= fileContents
+                codeGoesHere.innerHTML = fileContents;
               });
             }}
             id="loginButton"
@@ -172,6 +181,7 @@ export default function App() {
     redirectTo: "/",
     finished: ({ userSession }) => {
       didConnect({ userSession });
+      console.log(userSession.loadUserData());
     },
     appDetails: {
       name: "UPLINKdownlink",
