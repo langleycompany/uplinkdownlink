@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 import { Connect, useConnect } from "@blockstack/connect";
@@ -28,9 +28,14 @@ const appConfig = new AppConfig(["store_write", "publish_data"]);
 ReactBlockstack({ appConfig });
 
 function SignedInPage(props) {
-  /* function saveFile() {
-    console.log(this.value);
-  } */
+  const [filename, setFilename] = useState("");
+  const [codeInput, setCodeInput] = useState("");
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log({ filename, codeInput });
+  };
+
   return (
     <Container>
       <Header p={2}>
@@ -58,23 +63,43 @@ function SignedInPage(props) {
           <br />
           <br />
           <br />
-          <textarea
-            className="codePoint"
-            style={{ resize: "none", width: "25rem", height: "20rem" }}
-          />
-          <br />
-          <br />
-          <NeuButton
-            id="loginButton"
-            width="6rem"
-            height="3rem"
-            color="#e0e0e0"
-            onClick={() => {
-              alert("Coming soon!");
-            }}
-          >
-            Submit
-          </NeuButton>
+          <form onSubmit={handleSubmit}>
+            filename
+            <br />
+            <br />
+            <br />
+            <input
+              className="codePoint"
+              type="text"
+              value={filename}
+              onChange={e => setFilename(e.target.value)}
+            />
+            <br />
+            <br />
+            <br />
+            code
+            <br />
+            <br />
+            <br />
+            <textarea
+              className="codePoint"
+              style={{ resize: "none", width: "25rem", height: "20rem" }}
+              value={codeInput}
+              onChange={e => setCodeInput(e.target.value)}
+            />
+            <br />
+            <br />
+            <NeuButton
+              type="submit"
+              value="Submit"
+              id="loginButton"
+              width="6rem"
+              height="3rem"
+              color="#e0e0e0"
+            >
+              Submit
+            </NeuButton>
+          </form>
         </Content>
         <Aside left primary p={2} />
         <Aside right p={2} />
