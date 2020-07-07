@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React /*, {useState} */ from "react";
 import "./styles.css";
 
-import { Connect, useConnect } from "@blockstack/connect";
-import ReactBlockstack, { useBlockstack, didConnect } from "react-blockstack";
-import { AppConfig } from "blockstack";
+import {Connect, useConnect} from "@blockstack/connect";
+import ReactBlockstack, {useBlockstack, didConnect} from "react-blockstack";
+import {AppConfig} from "blockstack";
 
-import { NeuButton } from "neumorphism-react";
+/* import {NeuButton} from "neumorphism-react"; */
 
-import { UserSession } from "blockstack";
+/* import {UserSession} from "blockstack"; */
 
 import {
   Container,
@@ -18,17 +18,17 @@ import {
   Footer
 } from "react-holy-grail-layout";
 
-var userSession = new UserSession();
+/* var userSession = new UserSession();
 let options = {
   encrypt: false,
   decrypt: false
-};
+}; */
 
 const appConfig = new AppConfig(["store_write", "publish_data"]);
-ReactBlockstack({ appConfig });
+ReactBlockstack({appConfig});
 
 function SignedInPage(props) {
-  const [filename, setFilename] = useState("");
+  /* const [filename, setFilename] = useState("");
   const [codeInput, setCodeInput] = useState("");
 
   const handleSubmit = evt => {
@@ -36,102 +36,76 @@ function SignedInPage(props) {
     userSession.putFile(filename, codeInput, options).then(() => {
       console.log(filename, codeInput);
     });
-  };
+  }; */
+
+  function showEmail() {
+    var email = "j@uldl.me";
+    var name = "Jordan Reger";
+    var from = document.getElementById("from-emailBox");
+    if (from.innerHTML !== email) {
+      from.innerHTML = email;
+    }
+    if (from.innerHTML !== name) {
+      from.innerHTML = name;
+    }
+  }
+
+  function openEmailModal() {
+    console.log("coming soon");
+  }
 
   return (
     <Container>
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <span className="title">UPLINKdownlink (test)</span>
+            <img src="./public/uldl-transparent.png" alt="logo" />
           </div>
           <div className="right-side">
-            <NeuButton
-              id="loginButton"
-              width="10rem"
-              height="5rem"
-              onClick={props.signOut}
-              color="#e0e0e0"
-            >
+            <button id="loginButton" onClick={props.signOut}>
               Logout
-            </NeuButton>
+            </button>
           </div>
         </div>
       </Header>
       <Body>
         <Content p={2} className="page-content-loggedin">
-          Welcome to the first version :)
+          <h1>Downlink</h1>
           <br />
-          <br />
-          {userSession.loadUserData().username}
-          <br />
-          <br />
-          {userSession.loadUserData().identityAddress}
-          <br />
-          <br />
-          <br />
-          <br />
-          <form onSubmit={handleSubmit}>
-            filename
+          <div className="emailBox">
+            <span id="from-emailBox" onClick={showEmail}>
+              Giles Posture
+            </span>
             <br />
+            <span id="subject-emailBox">at lectus</span>
             <br />
-            <br />
-            <input
-              className="codePoint"
-              type="text"
-              value={filename}
-              onChange={e => setFilename(e.target.value)}
-            />
-            <br />
-            <br />
-            <br />
-            code
-            <br />
-            <br />
-            <br />
-            <textarea
-              className="codePoint"
-              style={{ resize: "none", width: "25rem", height: "20rem" }}
-              value={codeInput}
-              onChange={e => setCodeInput(e.target.value)}
-            />
-            <br />
-            <br />
-            <NeuButton
-              type="submit"
-              value="Submit"
-              id="loginButton"
-              width="6rem"
-              height="3rem"
-              color="#e0e0e0"
-            >
-              Submit
-            </NeuButton>
-          </form>
+            <span id="email-emailBox">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum
+              non consectetur a erat nam at lectus urna.
+            </span>
+          </div>
+
           <br />
-          <br />
-          Insert the filename at the top of the page... Working to fix this! :)
-          <br />
-          <br />
-          <NeuButton
-            onClick={() => {
-              userSession.getFile(filename, options).then(fileContents => {
-                var codeGoesHere = document.getElementById("codeGoesHere");
-                codeGoesHere.innerHTML = fileContents;
-              });
-            }}
-            id="loginButton"
-            width="8rem"
-            height="4rem"
-            color="#e0e0e0"
-          >
-            Read file content
-          </NeuButton>
-          <br />
-          <br />
-          <div id="codeGoesHere" />
+
+          <div className="emailBox">
+            <span id="from-emailBox" onClick={showEmail}>
+              Justin Case
+            </span>
+            <br />
+            <span id="subject-emailBox">morbi tristique</span>
+            <br />
+            <span id="email-emailBox">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Faucibus et molestie ac feugiat sed lectus vestibulum mattis
+              ullamcorper.
+            </span>
+          </div>
         </Content>
-        <Aside left primary p={2} />
+        <Aside left primary p={2}>
+          <button onClick={openEmailModal}>Compose</button>
+        </Aside>
         <Aside right p={2} />
       </Body>
       <Footer p={2}>Made by Langley Company</Footer>
@@ -140,47 +114,46 @@ function SignedInPage(props) {
 }
 
 function LoginPage() {
-  const { doOpenAuth } = useConnect();
+  const {doOpenAuth} = useConnect();
 
   return (
     <Container>
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <span className="title">UPLINKdownlink (test)</span>
+            <img src="./public/uldl-transparent.png" alt="logo" />
           </div>
           <div className="right-side">
-            <NeuButton
-              id="loginButton"
-              width="10rem"
-              height="5rem"
-              onClick={() => doOpenAuth(true)}
-              color="#e0e0e0"
-            >
+            <button id="loginButton" onClick={() => doOpenAuth(true)}>
               Login
-            </NeuButton>
+            </button>
           </div>
         </div>
       </Header>
       <Body>
         <Content p={2} className="page-content-login">
-          A decentralized all-in-one app.
+          An innovative communication service
         </Content>
         <Aside left primary p={2} />
         <Aside right p={2} />
       </Body>
-      <Footer p={2}>Made by Langley Company</Footer>
+      <Footer p={2}>
+        Made by{" "}
+        <a href="https://langley.company" id="langley-link">
+          Langley Company
+        </a>
+      </Footer>
     </Container>
   );
 }
 
 export default function App() {
-  const { userSession, authenticated, signOut } = useBlockstack();
+  const {userSession, authenticated, signOut} = useBlockstack();
 
   const authOptions = {
     redirectTo: "/",
-    finished: ({ userSession }) => {
-      didConnect({ userSession });
+    finished: ({userSession}) => {
+      didConnect({userSession});
       console.log(userSession.loadUserData());
     },
     appDetails: {

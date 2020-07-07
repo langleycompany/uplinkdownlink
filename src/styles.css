@@ -1,5 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
+.emailBox {
+  border: 1px solid #e0e0e0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 20px;
+  text-align: left;
+}
+
+#from-emailBox {
+  font-size: 1.5rem;
+}
+
+#subject-emailBox {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+#email-emailBox {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -44,7 +74,7 @@
 }
 
 * {
-  background-color: #e0e0e0;
+  background-color: #fff;
   font-family: "DM Sans", sans-serif;
 }
 
@@ -72,4 +102,9 @@
   border-radius: 10px;
   background: #e0e0e0;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+#langley-link {
+  color: #777;
+  text-decoration: none;
 }
