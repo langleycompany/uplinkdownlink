@@ -102,6 +102,38 @@ function SignedInPage(props) {
               ullamcorper.
             </span>
           </div>
+
+          <br />
+
+          <div className="emailBox">
+            <span id="from-emailBox" onClick={showEmail}>
+              Jason Response
+            </span>
+            <br />
+            <span id="subject-emailBox">hendrerit dolor</span>
+            <br />
+            <span id="email-emailBox">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque
+              convallis a cras semper.
+            </span>
+          </div>
+
+          <br />
+
+          <div className="emailBox">
+            <span id="from-emailBox" onClick={showEmail}>
+              Jake Weary
+            </span>
+            <br />
+            <span id="subject-emailBox">neque gravida</span>
+            <br />
+            <span id="email-emailBox">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Consectetur lorem donec massa sapien faucibus.
+            </span>
+          </div>
         </Content>
         <Aside left primary p={2}>
           <button onClick={openEmailModal}>Compose</button>
