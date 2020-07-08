@@ -1,0 +1,16 @@
+{
+    "short_name": "ULDL",
+    "name": "UPLINKdownlink",
+    "icons": [
+      {
+        "src": "https://cdn.jsdelivr.net/gh/langleycompany/uplinkdownlink@master/public/uldl-transparent.png",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }
+  
