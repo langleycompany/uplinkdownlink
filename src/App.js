@@ -59,7 +59,11 @@ function SignedInPage(props) {
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <img src="https://cdn.jsdelivr.net/gh/langleycompany/uplinkdownlink@master/public/uldl-transparent.png" alt="logo" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/langleycompany/uplinkdownlink@master/public/uldl-transparent.png"
+              alt="logo"
+              id="logo"
+            />
           </div>
           <div className="right-side">
             <button id="loginButton" onClick={props.signOut}>
@@ -140,9 +144,11 @@ function SignedInPage(props) {
         </Aside>
         <Aside right p={2} />
       </Body>
-      <Footer p={2}><a href="https://langley.company" id="langley-link">
+      <Footer p={2}>
+        <a href="https://langley.company" id="langley-link">
           LC
-        </a></Footer>
+        </a>
+      </Footer>
     </Container>
   );
 }
@@ -155,7 +161,11 @@ function LoginPage() {
       <Header p={2}>
         <div className="header-main-page">
           <div className="left-side">
-            <img src="https://cdn.jsdelivr.net/gh/langleycompany/uplinkdownlink@master/public/uldl-transparent.png" alt="logo" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/langleycompany/uplinkdownlink@master/public/uldl-transparent.png"
+              alt="logo"
+              id="logo"
+            />
           </div>
           <div className="right-side">
             <button id="loginButton" onClick={() => doOpenAuth(true)}>
@@ -166,7 +176,8 @@ function LoginPage() {
       </Header>
       <Body>
         <Content p={2} className="page-content-login">
-          An innovative communication service
+          <h1>UPLINKdownlink</h1>
+          <h3>An innovative communication service</h3>
         </Content>
         <Aside left primary p={2} />
         <Aside right p={2} />
