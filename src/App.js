@@ -16,6 +16,8 @@ import {
   Footer
 } from "react-holy-grail-layout";
 
+import {Row, Col} from "react-flexbox-grid";
+
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 /* var userSession = new UserSession();
@@ -66,10 +68,19 @@ export default function App() {
           <Content p={2} className="page-content-loggedin">
             <h1>dashboard</h1>
             <br />
-            
+            <Row between="xs" id="dashboard-row">
+              <Col xs={3} id="dashboard-box">
+                <a href="https://mail.uplinkdownlink.com">MAIL</a>
+              </Col>
+              <Col xs={3} id="dashboard-box">
+                Coming soon...
+              </Col>
+              <Col xs={3} id="dashboard-box">
+                Coming soon...
+              </Col>
+            </Row>
           </Content>
-          <Aside left primary p={2}>
-          </Aside>
+          <Aside left primary p={2} />
           <Aside right p={2} />
         </Body>
         <Footer p={2}>
