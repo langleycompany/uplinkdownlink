@@ -156,8 +156,8 @@ export default function App() {
       <Router>
         <Connect authOptions={authOptions}>
           <Switch>
-            <Route path="/uplink">
-              <p>testing</p>
+            <Route path="/mail">
+              <a href="https://mail.uplinkdownlink.com">Click here to go to the mail site</a>
             </Route>
             <Route path="/">
               {authenticated ? (
