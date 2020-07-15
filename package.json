@@ -1,11 +1,8 @@
 {
   "name": "uplinkdownlink",
   "version": "0.1.0",
-  "description": "a decentralized all-in-one app",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "description": "",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "@blockstack/connect": "2.7.7",
@@ -17,6 +14,7 @@
     "react-blockstack": "0.6.10",
     "react-dom": "16.12.0",
     "react-holy-grail-layout": "0.1.5",
+    "react-router-dom": "5.2.0",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
