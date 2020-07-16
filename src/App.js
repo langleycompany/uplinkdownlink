@@ -71,6 +71,7 @@ export default function App() {
             <Row between="xs" id="dashboard-row">
               <Col xs={3} id="dashboard-box">
                 <a href="https://mail.uplinkdownlink.com">MAIL</a>
+                <p id="description-box">Mail is under development right now.</p>
               </Col>
               <Col xs={3} id="dashboard-box">
                 Coming soon...
@@ -156,8 +157,8 @@ export default function App() {
       <Router>
         <Connect authOptions={authOptions}>
           <Switch>
-            <Route path="/mail">
-              <a href="https://mail.uplinkdownlink.com">Click here to go to the mail site</a>
+            <Route path="/uplink">
+              <p>testing</p>
             </Route>
             <Route path="/">
               {authenticated ? (
