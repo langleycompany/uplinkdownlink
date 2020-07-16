@@ -18,7 +18,7 @@ import {
 
 import {Row, Col} from "react-flexbox-grid";
 
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 /* var userSession = new UserSession();
 let options = {
