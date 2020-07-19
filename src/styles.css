@@ -6,6 +6,11 @@ a {
   background-color: none;
 }
 
+#description-box {
+  color: #777;
+  font-size: 0.5rem;
+}
+
 #dashboard-box {
   border: 1px solid #777777;
   border-radius: 10px;
@@ -23,6 +28,25 @@ a {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.commsBox {
+  border: 1px solid #e0e0e0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 20px;
+  text-align: left;
+}
+
+#from-commsBox {
+  font-size: 1rem;
+}
+
+#message-commsBox {
+  color: #777;
+  font-size: 0.8rem;
 }
 
 .emailBox {
