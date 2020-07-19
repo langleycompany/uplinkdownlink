@@ -484,6 +484,10 @@ export default function App() {
           </div>
         )} */
 
+  const NoMatchPage = () => {
+    return <h3>404 - Not found</h3>;
+  };
+
   return (
     <div id="App">
       <Router>
@@ -504,6 +508,7 @@ export default function App() {
             <Route path="/">
               {authenticated ? <Home signOut={signOut} /> : <LoginPage />}
             </Route>
+            <Route component={NoMatchPage} />
           </Switch>
         </Connect>
       </Router>
