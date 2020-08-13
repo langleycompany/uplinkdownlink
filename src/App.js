@@ -74,33 +74,66 @@ export default function App() {
     function loaduserandtime() {
       var date = new Date();
       var current_hour = date.getHours();
-      if (current_hour < 5 || current_hour === 24) {
-        return {
-          __html: `<h2 id="time">🌉 You should be asleep, ${name}! 🌉</h2>`
-        };
-      }
-      if (current_hour < 24 && current_hour >= 20) {
-        return {
-          __html: `<h2 id="time">🌚 Good night, ${name}! 🌚</h2>`
-        };
+      if (name !== undefined) {
+        if (current_hour < 5 || current_hour === 24) {
+          return {
+            __html: `<h2 id="time">🌉 You should be asleep, ${name}! 🌉</h2>`
+          };
+        }
+        if (current_hour < 24 && current_hour >= 20) {
+          return {
+            __html: `<h2 id="time">🌚 Good night, ${name}! 🌚</h2>`
+          };
+        }
+
+        if (current_hour < 20 && current_hour >= 16) {
+          return {
+            __html: `<h2 id="time">🌆 Good evening, ${name}! 🌆</h2>`
+          };
+        }
+
+        if (current_hour < 16 && current_hour >= 10) {
+          return {
+            __html: `<h2 id="time">☀️ Good afternoon, ${name}! ☀️</h2>`
+          };
+        }
+
+        if (current_hour < 10 && current_hour >= 5) {
+          return {
+            __html: `<h2 id="time">🌞 Good morning, ${name}! 🌞</h2>`
+          };
+        }
       }
 
-      if (current_hour < 20 && current_hour >= 16) {
-        return {
-          __html: `<h2 id="time">🌆 Good evening, ${name}! 🌆</h2>`
-        };
-      }
+      if (name === undefined) {
+        if (current_hour < 5 || current_hour === 24) {
+          return {
+            __html: `<h2 id="time">🌉 You should be asleep! 🌉</h2>`
+          };
+        }
+        if (current_hour < 24 && current_hour >= 20) {
+          return {
+            __html: `<h2 id="time">🌚 Good night! 🌚</h2>`
+          };
+        }
 
-      if (current_hour < 16 && current_hour >= 10) {
-        return {
-          __html: `<h2 id="time">☀️ Good afternoon, ${name}! ☀️</h2>`
-        };
-      }
+        if (current_hour < 20 && current_hour >= 16) {
+          return {
+            __html: `<h2 id="time">🌆 Good evening! 🌆</h2>`
+          };
+        }
 
-      if (current_hour < 10 && current_hour >= 5) {
-        return {
-          __html: `<h2 id="time">🌞 Good morning, ${name}! 🌞</h2>`
-        };
+        if (current_hour < 16 && current_hour >= 10) {
+          return {
+            __html: `<h2 id="time">☀️ Good afternoon! ☀️</h2>`
+          };
+        }
+
+        if (current_hour < 10 && current_hour >= 5) {
+          return {
+            __html: `<h2 id="time">🌞 Good morning! 🌞</h2>`
+          };
+        }
       }
     }
     return (
