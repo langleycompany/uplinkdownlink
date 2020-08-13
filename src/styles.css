@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+#time-emoji {
+  -webkit-text-stroke: 2px black;
+}
+
 .frontpage-desc {
   text-align: center;
   font-family: Roboto Mono;

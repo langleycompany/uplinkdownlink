@@ -77,30 +77,30 @@ export default function App() {
       if (name !== undefined) {
         if (current_hour < 5 || current_hour === 24) {
           return {
-            __html: `<h2 id="time">🌉 You should be asleep, ${name}! 🌉</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌉</span> You should be asleep, ${name}! <span id="time-emoji">🌉</span></h2>`
           };
         }
         if (current_hour < 24 && current_hour >= 20) {
           return {
-            __html: `<h2 id="time">🌚 Good night, ${name}! 🌚</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌚</span> Good night, ${name}! <span id="time-emoji">🌚</span></h2>`
           };
         }
 
         if (current_hour < 20 && current_hour >= 16) {
           return {
-            __html: `<h2 id="time">🌆 Good evening, ${name}! 🌆</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌆</span> Good evening, ${name}! <span id="time-emoji">🌆</span></h2>`
           };
         }
 
         if (current_hour < 16 && current_hour >= 10) {
           return {
-            __html: `<h2 id="time">☀️ Good afternoon, ${name}! ☀️</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">☀️</span> Good afternoon, ${name}! <span id="time-emoji">☀️</span></h2>`
           };
         }
 
         if (current_hour < 10 && current_hour >= 5) {
           return {
-            __html: `<h2 id="time">🌞 Good morning, ${name}! 🌞</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌞</span> Good morning, ${name}! <span id="time-emoji">🌞</span></h2>`
           };
         }
       }
@@ -108,30 +108,30 @@ export default function App() {
       if (name === undefined) {
         if (current_hour < 5 || current_hour === 24) {
           return {
-            __html: `<h2 id="time">🌉 You should be asleep! 🌉</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌉</span> You should be asleep! <span id="time-emoji">🌉</span></h2>`
           };
         }
         if (current_hour < 24 && current_hour >= 20) {
           return {
-            __html: `<h2 id="time">🌚 Good night! 🌚</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌚</span> Good night! <span id="time-emoji">🌚</span></h2>`
           };
         }
 
         if (current_hour < 20 && current_hour >= 16) {
           return {
-            __html: `<h2 id="time">🌆 Good evening! 🌆</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌆</span> Good evening! <span id="time-emoji">🌆</span></h2>`
           };
         }
 
         if (current_hour < 16 && current_hour >= 10) {
           return {
-            __html: `<h2 id="time">☀️ Good afternoon! ☀️</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">☀️</span> Good afternoon! <span id="time-emoji">☀️</span></h2>`
           };
         }
 
         if (current_hour < 10 && current_hour >= 5) {
           return {
-            __html: `<h2 id="time">🌞 Good morning! 🌞</h2>`
+            __html: `<h2 id="time"><span id="time-emoji">🌞</span> Good morning! <span id="time-emoji">🌞</span></h2>`
           };
         }
       }
