@@ -2,14 +2,16 @@ import React from "react";
 import "./styles.css";
 
 /* styles */
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core";
 import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
+  Button
+  /*
   Paper,
   Grid
+  */
 } from "@material-ui/core";
 /* styles */
 
@@ -69,10 +71,37 @@ export default function App() {
   function Home(props) {
     var name = userSession.loadUserData().profile.name;
 
-    function loadusername() {
-      return {
-        __html: `<h2>Hello, ${name}.</h2>`
-      };
+    function loaduserandtime() {
+      var date = new Date();
+      var current_hour = date.getHours();
+      if (current_hour < 5 || current_hour === 24) {
+        return {
+          __html: `<h2 id="time">🌉 You should be asleep, ${name}! 🌉</h2>`
+        };
+      }
+      if (current_hour < 24 && current_hour >= 20) {
+        return {
+          __html: `<h2 id="time">🌚 Good night, ${name}! 🌚</h2>`
+        };
+      }
+
+      if (current_hour < 20 && current_hour >= 16) {
+        return {
+          __html: `<h2 id="time">🌆 Good evening, ${name}! 🌆</h2>`
+        };
+      }
+
+      if (current_hour < 16 && current_hour >= 10) {
+        return {
+          __html: `<h2 id="time">☀️ Good afternoon, ${name}! ☀️</h2>`
+        };
+      }
+
+      if (current_hour < 10 && current_hour >= 5) {
+        return {
+          __html: `<h2 id="time">🌞 Good morning, ${name}! 🌞</h2>`
+        };
+      }
     }
     return (
       <div className="App">
@@ -89,46 +118,48 @@ export default function App() {
           </AppBar>
         </div>
         <div className="frontpage-desc">
-          <div dangerouslySetInnerHTML={loadusername()} />
+          <div dangerouslySetInnerHTML={loaduserandtime()} />
         </div>
-        <div className="frontpage-last">
-          <span id="all-movies">All movies</span>
-          <br />
-          <br />
-          <Grid container spacing={3}>
-            <Grid item xs>
-              <Paper className={classes.paper}>
-                <span id="movie-title">Movie 1</span>
-                <br />
-                <span id="movie-desc">This is movie 1. It's a good movie.</span>
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <Paper className={classes.paper}>
-                <span id="movie-title">Movie 2</span>
-                <br />
-                <span id="movie-desc">
-                  This is movie 2. It's also a good movie.
-                </span>
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <Paper className={classes.paper}>
-                <span id="movie-title">Movie 3</span>
-                <br />
-                <span id="movie-desc">
-                  This is movie 3. I haven't seen this one yet.
-                </span>
-              </Paper>
-            </Grid>
-          </Grid>
-        </div>
+        <div className="frontpage-last">\</div>
       </div>
     );
   }
 
   function LoginPage() {
     const { doOpenAuth } = useConnect();
+
+    function loadtime() {
+      var date = new Date();
+      var current_hour = date.getHours();
+      if (current_hour < 5 || current_hour === 24) {
+        return {
+          __html: `<h2 id="front-time">🌉</h2>`
+        };
+      }
+      if (current_hour < 24 && current_hour >= 20) {
+        return {
+          __html: `<h2 id="front-time">🌚</h2>`
+        };
+      }
+
+      if (current_hour < 20 && current_hour >= 16) {
+        return {
+          __html: `<h2 id="front-time">🌆</h2>`
+        };
+      }
+
+      if (current_hour < 16 && current_hour >= 10) {
+        return {
+          __html: `<h2 id="front-time">☀️</h2>`
+        };
+      }
+
+      if (current_hour < 10 && current_hour >= 5) {
+        return {
+          __html: `<h2 id="front-time">🌞</h2>`
+        };
+      }
+    }
 
     return (
       <div className="App">
@@ -145,7 +176,15 @@ export default function App() {
           </AppBar>
         </div>
         <div className="frontpage-desc">
-          <span id="desc-title">UPLINKdownlink</span>
+          <span id="desc-title">
+            <span role="img" aria-label="satellite">
+              🛰️
+            </span>{" "}
+            UPLINKdownlink{" "}
+            <span role="img" aria-label="a ground station">
+              📡
+            </span>
+          </span>
           <br />
           <span id="desc-desc">
             uldl is an innovative communication service. it simplifies the email
@@ -153,9 +192,7 @@ export default function App() {
           </span>
         </div>
         <div className="frontpage-last">
-          <span>
-            talk to us: <a href="mailto:j@uldl.me">j@uldl.me</a>
-          </span>
+          <div dangerouslySetInnerHTML={loadtime()} />
         </div>
       </div>
     );

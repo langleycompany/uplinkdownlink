@@ -20,9 +20,9 @@ a {
   border-radius: 10px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   #desc-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   #desc-desc {
     font-size: 0.75rem;
@@ -41,11 +41,15 @@ a {
   }
 
   .frontpage-desc {
-    padding: 1rem;
+    padding: 2rem;
+  }
+
+  #front-time {
+    font-size: 4rem;
   }
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 600px) {
   #desc-title {
     font-size: 2rem;
   }
@@ -65,7 +69,11 @@ a {
   }
 
   .frontpage-desc {
-    padding: 3rem;
+    padding: 7rem;
+  }
+
+  #front-time {
+    font-size: 5rem;
   }
 }
 
